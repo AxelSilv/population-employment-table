@@ -106,10 +106,15 @@ async function build() {
           const td4 = document.createElement("td");
           td4.textContent = pct != null ? fmtPct(pct) : "—";
           tr.appendChild(td4);
-  
+        
+          function setRowColor(tr, hex) {
+            // varmista että yliajetaan mahdollinen zebra:
+            tr.style.setProperty('background-color', hex, 'important');
+          }
+          
           if (pct != null) {
-            if (pct > 45) tr.style.backgroundColor = "#abffbd";
-            else if (pct < 25) tr.style.backgroundColor = "#ff9e9e";
+            if (pct > 45) setRowColor(tr, '#abffbd');   // vihreä
+            else if (pct < 25) setRowColor(tr, '#ff9e9e'); // punainen
           }
         });
   
