@@ -2,11 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Finnish Municipalities Population & Employment</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Municipality employment statistics in Finland</title>
     <link rel="stylesheet" href="skripti.css" />
   </head>
   <body>
-    <script src="script.js"></script>
+    <div class="center">
+      <h1>Municipality employment statistics in Finland</h1>
+
+      <table id="populationTable">
+        <thead>
+          <tr>
+            <th>Municipality</th>
+            <th>Population</th>
+            <th>Employment amount</th>
+            <th>Employment-%</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- JS täyttää rivit tänne -->
+        </tbody>
+      </table>
+
+      <div id="error" class="error" style="display:none;"></div>
+    </div>
+
+    <!-- Lataa skripti BODY:n lopussa, jotta DOM on varmasti valmis -->
+    <script src="script.js" defer></script>
   </body>
 </html>
